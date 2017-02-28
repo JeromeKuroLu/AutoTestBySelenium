@@ -61,8 +61,8 @@ else:
     left_data = np.array(left_records)
     right_data = np.array(right_records)
     label_data = np.array(labels)
-    final_model.fit([left_data, right_data], label_data, nb_epoch=300, batch_size=30)
-    final_model.fit(left_data, label_data, nb_epoch=300, batch_size=30)
+    final_model.fit([left_data, right_data], label_data, nb_epoch=10000, batch_size=30)
+    # final_model.fit(left_data, label_data, nb_epoch=300, batch_size=30)
     final_model.save_weights('./model_weights.h5')
 
 test_data_1 = np.array([3, 30])
