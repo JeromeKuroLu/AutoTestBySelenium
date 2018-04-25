@@ -1,7 +1,12 @@
+import schedule
+import time
+
 from common.selenium_driver import Driver
 from func_module.SOP.CEL.search_CEL import Search_CEL
-from test.issues.alm_operation import Operation
+from test.issues.alm_operation import Alm_Operation
 from pylab import *
+
+from test.issues.arp_operation import Arp_Operation
 
 if __name__ == "__main__":
     # browser_driver = Driver().get_firefox_driver()
@@ -10,8 +15,12 @@ if __name__ == "__main__":
     # test_search_cel.search_by_id(75081)
     # browser_driver.quit()
 
-    Operation().copy_tasks_from_st('ST120556', '1231', [])
-
+    # Alm_Operation().copy_tasks_from_st('ST120556', '1231', [])
+    Arp_Operation().log_in_jenkins()
+    # schedule.every().days.at("7:00").do(Arp_Operation().log_in_jenkins)
+    # while True:
+    #     schedule.run_pending()
+    #     time.sleep(1)
 
     # x, y = mgrid[-300:300, -300:300]
     # circle = Circle((0, 0), 1, alpha=0)

@@ -64,7 +64,8 @@ class OldDriver:
         plsq = leastsq(residuals, np.array(coefficients), args=(x_array, y_array))
         print(plsq)
         def result_func(x):
-            return curve_func(plsq[0].tolist(), x)
+            result = curve_func(plsq[0].tolist(), x)
+            return result
         return result_func
 
     def calculate_remnant_distance(self, c_pt_x, des_pt_x, curve_line_func):
@@ -88,5 +89,5 @@ if __name__ == "__main__":
     pts = [[1, 4], [2, 7], [3, 10], [5, 16], [6, 19], [7, 22], [8, 25]]
     od = OldDriver(2, 10)
     curve_func = od.fit_curve(pts)
-    r1 = od.calculate_remnant_distance(1, 2, curve_func)
+    r1 = od.calculate_remnant_distance(1, 3, curve_func)
 

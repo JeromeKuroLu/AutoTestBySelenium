@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support.expected_conditions import visibility_of_element_located, presence_of_element_located
 
-class Operation():
+class Alm_Operation():
     def __init__(self):
         self._default_link = 'http://alm.oocl.com/?workspaceId=WS100102&scopeId=PJ100468'
 
